@@ -1,6 +1,6 @@
 import {  merge, keyBy } from "lodash";
 
-let layoutReducerOk = (state, action) => {
+const layoutReducer = (state, action) => {
     switch (action.type) {
       //add a temporary item (if none already exists)
       //this is used when hovering with a DraggableSource over the grid
@@ -54,13 +54,5 @@ let layoutReducerOk = (state, action) => {
         return state;
     }
   };
-  const logReducer = reducer => (state, action, ...args)=>{
-    const newState = reducer(state, action, ...args)
-    console.log('Action', action)
-    console.log('State', newState)
-    return newState
-  }
-  
-  const layoutReducer = logReducer(layoutReducerOk)
 
   export default layoutReducer
